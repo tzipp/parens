@@ -1,6 +1,8 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
+using std::string;
 
 bool IsToken(char c)
 {
@@ -22,13 +24,20 @@ bool IsClosingToken(char c)
     return found;
 }
 
-int CountTokens()
+int CountTokens(string text)
 {
-
+    int count = 0;
+    for (auto letter: text)
+    {
+        if (IsToken(letter))
+            ++count;
+    }
+    return count;
 }
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    cout << "Bracket Balancer" << endl;
+
     return 0;
 }
